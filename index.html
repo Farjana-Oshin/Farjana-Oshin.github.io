@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farjana Akther — Sociology Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDE7DC;
+    --paper-raised: #F5F1E7;
+    --ink: #1F2A24;
+    --ink-soft: #4B564E;
+    --brick: #A63D2F;
+    --moss: #4A6355;
+    --rule: #C9BFA9;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  ::selection{ background: var(--brick); color: var(--paper-raised); }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header{
+    padding: 88px 0 56px;
+    opacity: 0;
+    animation: rise 0.9s ease-out forwards;
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    header{ animation: none; opacity: 1; }
+  }
+
+  h1{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .role{
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+
+  .tagline{
+    max-width: 46ch;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+
+  .contact-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .contact-row a{
+    color: var(--brick);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  .contact-row a:hover, .contact-row a:focus-visible{
+    border-bottom-color: var(--brick);
+  }
+
+  /* ---------- Sections ---------- */
+
+  section{
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-head{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+
+  .section-label{
+    font-size: 0.85rem;
+    color: var(--moss);
+    padding-top: 3px;
+  }
+
+  h2{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .section-body{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+  }
+
+  .section-body > .filler{ }
+
+  @media (max-width: 620px){
+    .section-head, .section-body{
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .section-label{ padding-top: 0; }
+  }
+
+  p{ margin: 0 0 14px; }
+  p:last-child{ margin-bottom: 0; }
+
+  /* ---------- Timeline (education / experience) ---------- */
+
+  .entry{
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    margin-bottom: 26px;
+  }
+  .entry:last-child{ margin-bottom: 0; }
+
+  .entry-year{
+    font-family: 'Newsreader', serif;
+    font-size: 0.95rem;
+    color: var(--brick);
+    padding-top: 2px;
+  }
+
+  .entry-title{
+    font-weight: 600;
+    margin: 0 0 3px;
+  }
+
+  .entry-meta{
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+
+  @media (max-width: 620px){
+    .entry{ grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ---------- Lists ---------- */
+
+  ul.plain{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.plain li{
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  ul.plain li:last-child{ border-bottom: none; padding-bottom: 0; }
+  ul.plain li:first-child{ padding-top: 0; }
+
+  .item-title{ font-weight: 600; }
+  .item-meta{ color: var(--ink-soft); font-size: 0.9rem; }
+
+  /* ---------- Skills ---------- */
+
+  .skill-group{ margin-bottom: 16px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+  .skill-group h3{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--moss);
+    margin: 0 0 6px;
+  }
+  .chip-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip{
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    padding: 40px 0 64px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  footer a{ color: var(--brick); text-decoration: none; }
+  footer a:hover{ text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <h1>Farjana Akther</h1>
+    <p class="role">Sociology researcher &mdash; urban housing, poverty &amp; governance</p>
+    <p class="tagline">MSS in Sociology from the University of Dhaka, working at the intersection of urban political economy, social protection, and governance research across Bangladesh.</p>
+    <div class="contact-row">
+      <a href="mailto:farjanaoshin75@gmail.com">farjanaoshin75@gmail.com</a>
+      <a href="https://www.linkedin.com/in/aktherfarjana" target="_blank" rel="noopener">LinkedIn</a>
+      <span>Dhaka, Bangladesh</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Summary</span>
+      <h2>About</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <p>I work across research, policy analysis, and academic mentoring, with fieldwork experience spanning UNDP, UN Women, and civil-society governance initiatives in Bangladesh. My research centers on housing, urban poverty, and the political economy of social protection &mdash; using mixed-method frameworks to trace how formal and informal systems shape access for households.</p>
+        <p>I graduated top of my batch in both the Master's and Bachelor's programs in Sociology at the University of Dhaka, and I'm currently a Trainee Research Associate on the Young Researchers' Fellowship at BIGD, BRAC University.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Focus</span>
+      <h2>Research interests</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <p>Urban housing &amp; political economy &middot; Poverty in informal settlements &middot; Social protection targeting and beneficiary access &middot; Climate and water governance &middot; Gender and civic participation</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">2016&ndash;2025</span>
+      <h2>Education</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="entry">
+          <div class="entry-year">2025</div>
+          <div>
+            <div class="entry-title">Master of Social Sciences, Sociology</div>
+            <div class="entry-meta">University of Dhaka &middot; CGPA 3.88/4.00 &middot; 2nd position of 180</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2023</div>
+          <div>
+            <div class="entry-title">Bachelor of Social Sciences, Sociology</div>
+            <div class="entry-meta">University of Dhaka &middot; CGPA 3.73/4.00 &middot; 2nd position of 190</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2018</div>
+          <div>
+            <div class="entry-title">Higher Secondary Certificate</div>
+            <div class="entry-meta">Birshreshtha Noor Mohammad Public College &middot; GPA 5.00/5.00</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2016</div>
+          <div>
+            <div class="entry-title">Secondary School Certificate</div>
+            <div class="entry-meta">St. Francis Xavier&rsquo;s Girls&rsquo; School &amp; College &middot; GPA 5.00/5.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Research</span>
+      <h2>Thesis &amp; papers</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <ul class="plain">
+          <li>
+            <div class="item-title">The Political Economy of Housing in Bangladesh</div>
+            <div class="item-meta">MSS Thesis, 2024&ndash;2025 &middot; Supervisor: Dr. Lipon Mondal, Dept. of Sociology, University of Dhaka</div>
+          </li>
+          <li>
+            <div class="item-title">The Politics of Poverty in Urban Slums</div>
+            <div class="item-meta">BSS Monograph, 2022&ndash;2023 &middot; Supervisor: Eashrat Jahan Eyemoon, Dept. of Sociology, University of Dhaka</div>
+          </li>
+          <li>
+            <div class="item-title">A Comparative Study of the Changes in Socio-economic Positions of the Transgender Community in Bangladesh</div>
+            <div class="item-meta">Presented at the Bangladesh Institute of Social Research Trust Conference, Dhaka, Dec 2023</div>
+          </li>
+          <li>
+            <div class="item-title">Delusional Dissonance of SDG: Intrinsic Constituents in the Context of Water Resource Management in Bangladesh</div>
+            <div class="item-meta">Abstract presented at the 2nd International Conference of SAIST, Dhaka, Nov 2022</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">2021&ndash;present</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="entry">
+          <div class="entry-year">2026&ndash;</div>
+          <div>
+            <div class="entry-title">Trainee Research Associate &mdash; Young Researchers&rsquo; Fellowship</div>
+            <div class="entry-meta">BRAC Institute of Governance and Development (BIGD), BRAC University</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2025&ndash;26</div>
+          <div>
+            <div class="entry-title">Research, Monitoring &amp; Communication Officer</div>
+            <div class="entry-meta">SHUJAN&mdash;Citizens for Good Governance, with The Hunger Project Bangladesh</div>
+            <p>Led digital monitoring tools for constituency-level election data across 47 constituencies; conducted qualitative interviews and drafted analytical briefs for governance dialogue and donor engagement.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-year">2022&ndash;25</div>
+          <div>
+            <div class="entry-title">Executive &mdash; Research &amp; Content Analyst</div>
+            <div class="entry-meta">Youth School for Social Entrepreneurs (YSSE)</div>
+            <p>Supported M&amp;E frameworks for youth development initiatives; produced analytical reports and coordinated with public-sector stakeholders on governance projects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Teaching</span>
+      <h2>Mentoring &amp; facilitation</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <ul class="plain">
+          <li>
+            <div class="item-title">Undergraduate peer mentoring</div>
+            <div class="item-meta">University of Dhaka &amp; North South University, Sociology &middot; 2023&ndash;2025</div>
+          </li>
+          <li>
+            <div class="item-title">Facilitator, Governance &amp; Democracy Dialogues</div>
+            <div class="item-meta">Ballot Project, UNDP&ndash;SHUJAN &middot; Dec 2025&ndash;Jan 2026</div>
+          </li>
+          <li>
+            <div class="item-title">Facilitator, Essentials of Content Writing</div>
+            <div class="item-meta">YSSE, ULAB Language Club &middot; 2022&ndash;2024</div>
+          </li>
+          <li>
+            <div class="item-title">Private tutoring, HSC-level Sociology</div>
+            <div class="item-meta">Arjan Coaching Centre &middot; 2020&ndash;2024</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Recognition</span>
+      <h2>Awards &amp; fellowships</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <ul class="plain">
+          <li>
+            <div class="item-title">Young Researchers&rsquo; Fellowship (YRF) Programme</div>
+            <div class="item-meta">BIGD, BRAC University &middot; 2026</div>
+          </li>
+          <li>
+            <div class="item-title">ICCCAD Youth Fellowship</div>
+            <div class="item-meta">Climate governance &amp; adaptation, field visits to climate-vulnerable regions &middot; Feb&ndash;Sep 2025</div>
+          </li>
+          <li>
+            <div class="item-title">Dhaka University Merit Scholarship</div>
+            <div class="item-meta">Undergraduate academic excellence &middot; 2022&ndash;2023</div>
+          </li>
+          <li>
+            <div class="item-title">Women Peace Ambassador Award</div>
+            <div class="item-meta">Blooming Lotus project, inclusivity for female Madrasa students &middot; 2022</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-label">Toolkit</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="skill-group">
+          <h3>Research</h3>
+          <div class="chip-row">
+            <span class="chip">Qualitative &amp; quantitative analysis</span>
+            <span class="chip">Fieldwork coordination</span>
+            <span class="chip">Interview &amp; FGD facilitation</span>
+            <span class="chip">Policy analysis</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Technical</h3>
+          <div class="chip-row">
+            <span class="chip">SPSS</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Microsoft 365</span>
+            <span class="chip">Google Workspace</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Get in touch at <a href="mailto:farjanaoshin75@gmail.com">farjanaoshin75@gmail.com</a> or on <a href="https://www.linkedin.com/in/aktherfarjana" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
